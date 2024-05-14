@@ -151,7 +151,7 @@ eksctl create iamserviceaccount \
 --namespace=velero \
 --role-name=eks-velero-recovery \
 --role-only \
---attach-policy-arn=arn:aws:iam:: 026280443682:policy/VeleroAccessPolicy \
+--attach-policy-arn=arn:aws:iam:: ${ACCOUNT}:policy/VeleroAccessPolicy \
 --approve
 Install the Velero in the second cluster:
 velero install --provider aws --plugins velero/velero-plugin-for-aws:v1.0.1 --bucket dr-k8s-eks-prod-backup --backup-location-config region=us-east-2 --snapshot-location-config region=us-east-2 --secret-file C:\\Users\\sonus\\.aws\\credentials
